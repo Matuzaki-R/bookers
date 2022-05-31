@@ -1,5 +1,6 @@
 <!--<p>Find me in app/views/books/new.html.erb</p>-->
-<h2>New Book</h2>
+<!--8章参照-->
+ <h2>New Book</h2>
 <% if @book.errors.any? %>
   <%= @book.errors.count %>件のエラーが発生しました
   <ul>
@@ -8,8 +9,8 @@
     <% end %>
   </ul>
 <% end %>
-<!-- form_with部分 -->
-<%= form_with model:Book.new, url: '/books', method: :post do |f| %>
+<!-- form_with部分 2章 参照 form_withについての補足-->
+<%= form_with model: @book, url: '/books', method: :post do |f| %>
   <p>Title</p>
   <%= f.text_field :title %>
 

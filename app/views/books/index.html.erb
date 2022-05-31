@@ -1,11 +1,18 @@
 <!--<p>Find me in app/views/books/index.html.erb</p>-->
 <h1>Books</h1>
+ <table>
+  <thead>
+   <tr>
+     <th class="table">Title</th>
+     <th class="table">Body</th>
+   </tr>
+</table>
 
 <%@books.each do |book| %>
 
-  <p>Title</p>
+  <!--４章のindexのlink_toを変更参照-->
   <span>
-   <%= link_to book.title,book_path(book.id) %>
+<%= link_to book.title, book_path(book.id) %>
   </span>
 
 <% end %>
