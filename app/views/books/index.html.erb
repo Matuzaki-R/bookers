@@ -1,18 +1,43 @@
 <!--<p>Find me in app/views/books/index.html.erb</p>-->
+<div class="index-box">
 <h1>Books</h1>
  <table>
   <thead>
-   <tr>
-     <th class="table">Title</th>
-     <th class="table">Body</th>
-   </tr>
-</table>
+    <tr class="">
+     <th>Title</th>
+     <th>body</th>
+     <th></th>
+    </tr> 
+  </thead>
+  <tbody>
+      <tr>
+         <%@books.each do |book| %>
+         <%= link_to book.title, book_path(book.id) %>
+      </tr>
+  </tbody>
+ </table>
+ 
+ <tbody>
+     
+ </tbody>
+   
 
-<%@books.each do |book| %>
+
 
   <!--４章のindexのlink_toを変更参照-->
-  <span>
-<%= link_to book.title, book_path(book.id) %>
-  </span>
 
+
+<% end %>
+
+
+ <h2>New Book</h2>
+
+<!-- form_with部分 2章 参照 form_withについての補足-->
+<%= form_with model: @books, url: '/books', method: :post do |f| %>
+  <p>Title</p>
+  <%= f.text_field :title %>
+
+  <p>Body</p>
+  <%= f.text_area :body %>
+  </br><%= f.submit 'Create Books' %>
 <% end %>

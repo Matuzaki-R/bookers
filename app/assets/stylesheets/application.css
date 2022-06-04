@@ -18,6 +18,15 @@
   padding: 0;
   box-sizing: border-box;
 }
-body,h1,p,a{
+
+.strong{
+  font-weight:bold;
+}
+
+h1{
+  font-size: 26px;
   margin: 33px;
+}
+.table{
+  
 }

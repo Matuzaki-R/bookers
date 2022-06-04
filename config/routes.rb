@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'top'=> 'homes#top'
+  get '/'=> 'homes#top'
  # ルーティングの記述の短縮 resourcesメソッド
   resources:books
 
