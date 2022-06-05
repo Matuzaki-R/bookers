@@ -1,17 +1,17 @@
 <!--<p>Find me in app/views/books/show.html.erb</p>-->
 
  <%= flash[:notice]%>
-
-<div class="show-text">
+<div class="show-box">
+ <div class="show-text">
     <b>Title:</b>
     <%=@book.title %>
-</div>
+ </div>
 
-<div class="show-text">
+ <div class="show-text">
     <b>Body:</b>
     <%=@book.body %>
+ </div>
 </div>
-
 <p>
     <div class="show-link">
     <%= link_to "Edit",edit_book_path(@book.id) %> |
