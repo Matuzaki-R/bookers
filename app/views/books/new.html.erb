@@ -11,6 +11,7 @@
 <% end %>
 <!-- form_with部分 2章 参照 form_withについての補足-->
 <%= form_with model: @book, url: '/books', method: :post do |f| %>
+
   <p>Title</p>
   <%= f.text_field :title %>
 

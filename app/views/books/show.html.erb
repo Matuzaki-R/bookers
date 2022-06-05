@@ -1,16 +1,20 @@
 <!--<p>Find me in app/views/books/show.html.erb</p>-->
-<h2>Title</h2>
-<%=@book.title %>
 
-<h2>Body</h2>
-<%=@book.body %>
+ <%= flash[:notice]%>
 
-<p class="show-link">
-   <div="show-item">
-     <%= link_to "Edit",edit_book_path(@book.id) %>
-   </div> 
-<!--%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "Are you sure？" %>仮実装-->
-   <div="show-item2">
+<div class="show-text">
+    <b>Title:</b>
+    <%=@book.title %>
+</div>
+
+<div class="show-text">
+    <b>Body:</b>
+    <%=@book.body %>
+</div>
+
+<p>
+    <div class="show-link">
+    <%= link_to "Edit",edit_book_path(@book.id) %> |
     <%= link_to "Back",books_path(@book.id)  %>
-   </div>
+    </div>
 </p>

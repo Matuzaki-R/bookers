@@ -1,4 +1,7 @@
 <!--<p>Find me in app/views/books/index.html.erb</p>-->
+
+ <%= flash[:alert]%>
+
 <div class="index-box">
  <h1>Books</h1>
  
@@ -25,7 +28,6 @@
  </table>
 
  <h2>New Book</h2>
- <%= flash[:notice] %>
 <%= form_for(@book) do |f| %>
   <% if @book.errors.any? %>
     <%= @book.errors.count %>errors prohibited this book from being saved:
@@ -33,9 +35,9 @@
       <%= message %>
     <% end %>
   <% end %>
-    <h4>Title</h4>
+    <p>Title</p>
       <%= f.text_field :title %>
-    <h4>Body</h4>
+    <p>Body</p>
       <%= f.text_area :body %>
     <div class="index-create-book">
       <%= f.submit "Create Book" %>
