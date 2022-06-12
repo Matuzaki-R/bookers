@@ -35,6 +35,16 @@ h1,h2{
   margin: 33px;
 }
 
+.errors-message{
+  width: 450px;
+}
+.error-message-box{
+  padding: 5px;
+}
+.message-list{
+  margin: 0 33px;
+}
+
 .show-box{
   margin: 33px 0;
 }

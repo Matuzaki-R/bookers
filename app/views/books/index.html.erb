@@ -4,7 +4,7 @@
 
 <div class="index-box">
  <h1>Books</h1>
- 
+
  <table width="740px">
   <thead>
     <tr>
@@ -13,7 +13,7 @@
       <th　colspan="3"></th>
     </tr>
   </thead>
-  
+
   <tbody>
       <%@books.each do |book| %>
       <tr height="25px">
@@ -28,13 +28,23 @@
  </table>
 
  <h2>New Book</h2>
-<%= form_for(@book) do |f| %>
+
+ <div class="errors-message">
+  <div ="error-message-box">
   <% if @book.errors.any? %>
     <%= @book.errors.count %>errors prohibited this book from being saved:
     <% @book.errors.full_messages.each do |message| %>
-      <%= message %>
+  </div>
+     <ul class="message-list">
+       <li class="message-list-item">
+        <%= message %>
+       </li>
+     </ul>
     <% end %>
   <% end %>
+ </div>
+ 
+<%= form_with model: @book, url: '/books', method: :post do |f| %>
     <p>Title</p>
       <%= f.text_field :title %>
     <p>Body</p>
